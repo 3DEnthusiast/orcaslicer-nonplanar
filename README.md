@@ -5,6 +5,13 @@
 > v0.1 ships no Intel Mac, Windows or Linux binary, but the source now also builds on
 > Windows with MSVC — see [`BUILD-WINDOWS.md`](BUILD-WINDOWS.md).
 
+> [!NOTE]
+> **Linux (community build, this fork):** an unofficial x86_64 AppImage is available under
+> [Releases](https://github.com/3DEnthusiast/orcaslicer-nonplanar/releases/tag/v0.1-linux).
+> It was built on Zorin OS (Ubuntu 24.04 based) from the same patches as the other platforms. See
+> [`BUILD-LINUX.md`](BUILD-LINUX.md) to build it yourself. It is not an official release of the
+> original project, so report Linux-specific problems in this fork's issues.
+
 **Test release.** OrcaSlicer 2.4.2 with **nonplanar top surfaces**: the last shells of gently sloped tops
 (up to 12°) follow the surface instead of being printed as stair steps. Every nonplanar move is checked against
 a hotend model, and the print order is planned so the nozzle never hits material that is already printed.
@@ -100,7 +107,20 @@ add the Quality setting *Use nonplanar layers* and switch it off.
 - **Slope compensation:** downhill top lines are raised and uphill lines lowered slightly, so the line direction
   doesn't show on slopes.
 
-## Install
+## Install (Linux)
+
+Download `OrcaSlicer-Nonplanar.AppImage` from this fork's
+[Releases](https://github.com/3DEnthusiast/orcaslicer-nonplanar/releases/tag/v0.1-linux), then:
+
+```bash
+chmod +x OrcaSlicer-Nonplanar.AppImage && ./OrcaSlicer-Nonplanar.AppImage
+```
+
+- If the 3D view or dialogs misbehave on Wayland: `GDK_BACKEND=x11 ./OrcaSlicer-Nonplanar.AppImage`
+- If it won't start because FUSE is missing: `./OrcaSlicer-Nonplanar.AppImage --appimage-extract-and-run`
+- The build is unsigned and has the same test status and printer limits as the macOS release.
+
+## Install (macOS)
 
 Download `OrcaSlicer-Nonplanar-v0.1-macOS-arm64.dmg` from
 [Releases](https://github.com/fich-l/orcaslicer-nonplanar/releases).
