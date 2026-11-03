@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 > **Official build: macOS with Apple Silicon (M1 or newer).**
-> v0.1 ships no Intel Mac, Windows or Linux binary, but the source now also builds on
+> The original v0.1 ships no Intel Mac, Windows or Linux binary (this fork adds an unofficial Linux AppImage, see below), but the source now also builds on
 > Windows with MSVC — see [`BUILD-WINDOWS.md`](BUILD-WINDOWS.md).
 
 > [!NOTE]
